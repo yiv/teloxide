@@ -1,0 +1,56 @@
+[package]
+name = "teloxide"
+version = "0.2.0"
+edition = "2018"
+description = "An elegant Telegram bots framework for Rust"
+repository = "https://github.com/teloxide/teloxide"
+documentation = "https://docs.rs/teloxide/"
+readme = "README.md"
+keywords = ["teloxide", "telegram", "telegram-bot", "telegram-bot-api"]
+license = "MIT"
+exclude = ["media"]
+authors = [
+        "Temirkhan Myrzamadi <hirrolot@gmail.com>",
+        "Waffle Lapkin <waffle.lapkin@gmail.com>",
+        "p0lunin <dmytro.polunin@gmail.com>",
+        "Mishko torop'izhko",
+        "Mr-Andersen",
+        "Sergey Levitin <selevit@gmail.com>",
+        "Rustem B. <bakirov.com@yandex.ru>",
+        "Alexey Fedechkin <aleksey-fedechkin@rambler.ru>"
+]
+
+[badges]
+maintenance = { status = "actively-developed" }
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde_json = "1.0.44"
+serde = { version = "1.0.101", features = ["derive"] }
+serde_derive = "1.0.110"
+
+tokio = { version = "0.2.11", features = ["full"] }
+tokio-util = { version = "0.3.0", features = ["full"] }
+
+reqwest = { version = "0.10.8", features = ["json", "stream"] }
+log = "0.4.8"
+lockfree = "0.5.1"
+bytes = "0.5.3"
+mime = "0.3.16"
+
+derive_more = "0.99.2"
+thiserror = "1.0.9"
+async-trait = "0.1.22"
+futures = "0.3.1"
+pin-project = "0.4.6"
+serde_with_macros = "1.0.1"
+frunk = "0.3.1"
+
+teloxide-macros = "0.2.1"
+
+[dev-dependencies]
+smart-default = "0.6.0"
+rand = "0.7.3"
+pretty_env_logger = "0.4.0"
+lazy_static = "1.4.0"
