@@ -61,6 +61,8 @@ impl Bot {
     }
 }
 
+
+
 impl Bot {
     // TODO: const fn
     pub fn token(&self) -> &str {
