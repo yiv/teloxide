@@ -19,6 +19,7 @@ pub struct SendMessage {
     pub chat_id: ChatId,
     pub text: String,
     pub parse_mode: Option<ParseMode>,
+    pub selective: Option<bool>,
     pub disable_web_page_preview: Option<bool>,
     pub disable_notification: Option<bool>,
     pub reply_to_message_id: Option<i64>,
@@ -51,6 +52,7 @@ impl SendMessage {
             chat_id: chat_id.into(),
             text: text.into(),
             parse_mode: None,
+            selective: None,
             disable_web_page_preview: None,
             disable_notification: None,
             reply_to_message_id: None,
@@ -123,6 +125,13 @@ impl SendMessage {
             T: Into<ReplyMarkup>,
     {
         self.reply_markup = Some(value.into());
+        self
+    }
+    pub fn selective<T>(mut self, val: T) -> Self
+        where
+            T: Into<Option<bool>>,
+    {
+        self.selective = val.into();
         self
     }
 }

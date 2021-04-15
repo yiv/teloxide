@@ -1,0 +1,14 @@
+*.exe
+*.test
+*.prof
+bin
+.godeps
+.cache
+.glide/
+.idea
+.idea/
+tmp/
+tmp
+
+target/
+**/*.rs.bk
