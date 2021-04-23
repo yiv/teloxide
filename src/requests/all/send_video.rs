@@ -14,7 +14,7 @@ use std::sync::Arc;
 ///
 /// [The official docs](https://core.telegram.org/bots/api#sendvideo).
 #[serde_with_macros::skip_serializing_none]
-#[derive(Default, Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SendVideo {
     #[serde(skip)]
     bot: Arc<Bot>,

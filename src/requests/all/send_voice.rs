@@ -19,7 +19,7 @@ use std::sync::Arc;
 /// [`Audio`]: crate::types::Audio
 /// [`Document`]: crate::types::Document
 #[serde_with_macros::skip_serializing_none]
-#[derive(Default, Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SendVoice {
     #[serde(skip)]
     bot: Arc<Bot>,
