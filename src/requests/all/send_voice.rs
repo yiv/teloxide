@@ -18,17 +18,19 @@ use std::sync::Arc;
 ///
 /// [`Audio`]: crate::types::Audio
 /// [`Document`]: crate::types::Document
-#[derive(Debug, Clone)]
+#[serde_with_macros::skip_serializing_none]
+#[derive(Default, Debug, Clone, Serialize, Deserialize)]
 pub struct SendVoice {
+    #[serde(skip)]
     bot: Arc<Bot>,
-    chat_id: ChatId,
-    voice: InputFile,
-    caption: Option<String>,
-    parse_mode: Option<ParseMode>,
-    duration: Option<i32>,
-    disable_notification: Option<bool>,
-    reply_to_message_id: Option<i64>,
-    reply_markup: Option<ReplyMarkup>,
+    pub chat_id: ChatId,
+    pub voice: InputFile,
+    pub caption: Option<String>,
+    pub parse_mode: Option<ParseMode>,
+    pub duration: Option<i32>,
+    pub disable_notification: Option<bool>,
+    pub reply_to_message_id: Option<i64>,
+    pub reply_markup: Option<ReplyMarkup>,
 }
 
 #[async_trait::async_trait]
