@@ -11,11 +11,11 @@ pub struct GuildRole {
     pub name: String,
     pub position: i32,
     pub permissions: i64,
-    pub color: i64,
+    pub color: u32,
 }
 
 impl GuildRole {
-    pub fn new(id: i64, name: String, position: i32, permissions: i64, color: i64) -> Self {
+    pub fn new(id: i64, name: String, position: i32, permissions: i64, color: u32) -> Self {
         GuildRole {
             id,
             name,
