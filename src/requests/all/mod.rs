@@ -71,6 +71,7 @@ mod get_guild_roles;
 mod search_guild_member;
 mod set_member_role;
 mod get_role_members;
+mod search_guild_member_by_username;
 
 pub use add_sticker_to_set::*;
 pub use answer_callback_query::*;
@@ -146,3 +147,4 @@ pub use get_guild_roles::*;
 pub use search_guild_member::*;
 pub use set_member_role::*;
 pub use get_role_members::*;
+pub use search_guild_member_by_username::*;

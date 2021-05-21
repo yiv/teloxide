@@ -12,7 +12,7 @@ use crate::{
     Bot,
 };
 use std::sync::Arc;
-use crate::requests::SearchGuildMember;
+use crate::requests::{SearchGuildMember, SearchGuildMemberByUsername};
 
 /// A [`Dispatcher`]'s handler's context of a bot and an update.
 ///
@@ -199,6 +199,10 @@ impl UpdateWithCx<Message> {
 
     pub fn search_guild_member(&self, guild_id: i64, query: String) -> SearchGuildMember {
         self.bot.search_guild_member(guild_id, query)
+    }
+
+    pub fn search_guild_member_by_username(&self, guild_id: i64, usernames: Vec<String>) -> SearchGuildMemberByUsername {
+        self.bot.search_guild_member_by_username(guild_id, usernames)
     }
 
     pub fn get_chat_member(&self, guild_id: Option<i64>, user_id: i64) -> GetChatMember {

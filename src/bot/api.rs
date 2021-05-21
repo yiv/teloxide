@@ -28,6 +28,7 @@ use crate::{
     Bot,
 };
 use std::sync::Arc;
+use crate::requests::SearchGuildMemberByUsername;
 
 impl Bot {
     /// Use this method to receive incoming updates using long polling ([wiki]).
@@ -1659,6 +1660,14 @@ impl Bot {
         query: String,
     ) -> SearchGuildMember{
         SearchGuildMember::new(Arc::clone(self), guild_id, query)
+    }
+
+    pub fn search_guild_member_by_username(
+        self: &Arc<Bot>,
+        guild_id: i64,
+        usernames: Vec<String>,
+    ) -> SearchGuildMemberByUsername{
+        SearchGuildMemberByUsername::new(Arc::clone(self), guild_id, usernames)
     }
 
     pub fn get_role_members(
